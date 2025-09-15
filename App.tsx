@@ -1,45 +1,24 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import NewsReader from './NewsReader';
+import Login from './Login';
+import Weather from './Weather';
+import ProductList from './ProdutList';
+import ExpenseTracker from './ExpenseTracker';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+const Drawer = createDrawerNavigator();
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+export default function App() {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Login/Logout">
+        <Drawer.Screen name="NewsReader" component={NewsReader} />
+        <Drawer.Screen name="Login/Logout" component={Login} />
+        <Drawer.Screen name="Weather" component={Weather} />
+        <Drawer.Screen name="Product List" component={ProductList} />
+        <Drawer.Screen name="Expense Tracker" component={ExpenseTracker} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
