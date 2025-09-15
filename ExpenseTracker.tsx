@@ -34,12 +34,10 @@ const ExpenseTracker = () => {
         }
     };
 
-    // Calculate total per category for PieChart
     const categoryTotals = predefinedCategories.map(cat =>
         expenses.filter(e => e.category === cat.name).reduce((sum, e) => sum + e.amount, 0)
     );
-    const pieColors = predefinedCategories.map(cat => cat.color);
-    // Convert to array of Slice objects for PieChart
+    
     const pieSlices = categoryTotals.map((total, idx) => ({
         value: total,
         color: predefinedCategories[idx].color,
@@ -85,10 +83,7 @@ const ExpenseTracker = () => {
                     <View style={{ alignItems: 'center', marginVertical: 20 }}>
                         <PieChart
                             widthAndHeight={250}
-                            series={categoryTotals}
-                            sliceColor={pieColors}
-                            coverRadius={0.6}
-                            coverFill={'#FFF'}
+                            series={pieSlices}
                         />
                         <View style={{ flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap', marginVertical: 10 }}>
                             {predefinedCategories.map((cat, idx) => (

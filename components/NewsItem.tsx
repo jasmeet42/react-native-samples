@@ -1,6 +1,7 @@
 import { memo, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { Props } from "../NewsReader";
+import FastImage from "@d11/react-native-fast-image";
 
 const NewsItem = memo(({ title, description, imageUrl }: Props) => {
   const [loading, setLoading] = useState(true);
