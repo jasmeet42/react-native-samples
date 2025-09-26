@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { Props } from "../NewsReader";
 import FastImage from "@d11/react-native-fast-image";
 

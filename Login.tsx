@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
-import { Alert, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from "react-native";
+import {StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from "react-native";
 import axios from 'axios';
 import EncryptedStorage from 'react-native-encrypted-storage';
 
 import {
-    createStaticNavigation,
     useNavigation,
+    NavigationProp,
 } from '@react-navigation/native';
+
+type RootStackParamList = {
+    NewsReader: undefined;
+    // add other screens here if needed
+};
 
 const Login = () => {
     const [email, setEmail] = useState("eve.holt@reqres.in");
@@ -14,7 +19,7 @@ const Login = () => {
     const [error, setError] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
 
     // Save JWT securely
@@ -76,7 +81,7 @@ const Login = () => {
             setLoggedIn(true);
             storeToken(token)
             navigation.navigate('NewsReader'); // Navigate to NewsReader
-        } catch (err) {u
+        } catch (err) {
             setError('Login failed. Check credentials.');
         }
     };
