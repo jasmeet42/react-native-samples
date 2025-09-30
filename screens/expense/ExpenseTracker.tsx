@@ -1,12 +1,12 @@
 //Add new expense entries with category and amount
 import { useState, useEffect } from "react";
 import { Button, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import Expense from "./model/Expense";
+import Expense from "../../model/Expense";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Picker } from '@react-native-picker/picker';
 import { addExpense as dbAddExpense, loadExpenses, initDB } from "./database/expenseStorage";
 import PieChart from 'react-native-pie-chart';
-import ExpenseItem from "./components/ExpenseItem";
+import ExpenseItem from "./ExpenseItem";
 
 const ExpenseTracker = () => {
     const [expenses, setExpenses] = useState<Expense[]>([]);

@@ -1,4 +1,4 @@
-import news from '../model/news';
+import news from '../../../model/news';
 import MD5 from 'crypto-js/md5';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // or for stronger hashing:

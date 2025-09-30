@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import Expense from "../model/Expense";
+import Expense from "../../model/Expense";
 import React from "react";
 const ExpenseItem = React.memo(({category,amount,date}: Expense) => {
     return (

@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { ActivityIndicator, Image, PermissionsAndroid, Platform, StyleSheet, Text, View } from 'react-native';
-import { getWeatherData, getWeatherTimeStamp, saveWeatherData } from './repositoy/weather-repository';
+import { getWeatherData, getWeatherTimeStamp, saveWeatherData } from './repository/weather-repository';
 import Geolocation from 'react-native-geolocation-service';
-import Config from './network/config';
-import useFetch from './hooks/useFetch';
+import Config from '../../network/config';
+import useFetch from '../../hooks/useFetch';
 import { WEATHER_API_KEY } from '@env';
-import commonStyles from './styles';
+import commonStyles from '../../styles';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export type WeatherData = {

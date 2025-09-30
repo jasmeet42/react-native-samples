@@ -1,5 +1,5 @@
 import SQLite from 'react-native-sqlite-storage';
-import Expense from '../model/Expense';
+import Expense from '../../../model/Expense';
 
 const db = SQLite.openDatabase(
   { name: 'expenses.db', location: 'default' },

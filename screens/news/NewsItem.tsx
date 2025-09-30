@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
-import { Props } from "../NewsReader";
+import { Props } from './types';
 import FastImage from "@d11/react-native-fast-image";
 
 const NewsItem = memo(({ title, description, imageUrl }: Props) => {

@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import Product from "../model/Product";
+import Product from "../../model/Product";
 import React from "react";
 
 

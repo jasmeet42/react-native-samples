@@ -3,15 +3,15 @@ import { NEWS_API_KEY } from '@env';
 import {
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
-import useFetch from './hooks/useFetch';
-import Config from './network/config';
+import useFetch from '../../hooks/useFetch';
+import Config from '../../network/config';
 import React, { useState, useEffect, useRef, memo, useCallback } from 'react';
-import news from './model/news';
-import NewsResponse from './model/newsResponse';
-import { saveArticles, getAllArticles, removeArticles } from './repositoy/news-repository';
+import news from '../../model/news';
+import NewsResponse from '../../model/newsResponse';
+import { saveArticles, getAllArticles, removeArticles } from './repository/news-repository';
 import FastImage from '@d11/react-native-fast-image';
-import commonStyles from './styles';
-import NewsItem from './components/NewsItem';
+import commonStyles from '../../styles';
+import NewsItem from './NewsItem';
 
 function NewsReader() {
   const [params, setParams] = useState({
@@ -105,14 +105,6 @@ function NewsReader() {
     </SafeAreaProvider>
   );
 }
-
-export type Props = {
-  title: string,
-  description: string,
-  imageUrl: string
-}
-
-
 
 const styles = StyleSheet.create({
   container: {

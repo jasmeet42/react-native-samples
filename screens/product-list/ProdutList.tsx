@@ -1,13 +1,13 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import useFetch from "./hooks/useFetch";
-import Config from "./network/config";
+import useFetch from "../../hooks/useFetch";
+import Config from "../../network/config";
 import { ActivityIndicator, FlatList, Text, TextInput, View } from "react-native";
 import { Picker } from '@react-native-picker/picker';
-import commonStyles from "./styles";
+import commonStyles from "../../styles";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import ProductListResponse from "./model/ProductListResponse";
-import Product from "./model/Product";
-import ProductItem from "./components/ProductItem";
+import ProductListResponse from "../../model/ProductListResponse";
+import Product from "../../model/Product";
+import ProductItem from "./ProductItem";
 
 const ProductList = () => {
     const [products, setProducts] = useState<Product[]>([]);

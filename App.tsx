@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import NewsReader from './NewsReader';
-import Login from './Login';
-import Weather from './Weather';
-import ProductList from './ProdutList';
-import ExpenseTracker from './ExpenseTracker';
+import NewsReader from './screens/news/NewsReader';
+import Login from './screens/login/Login';
+import Weather from './screens/weather/Weather';
+import ProductList from './screens/product-list/ProdutList';
+import ExpenseTracker from './screens/expense/ExpenseTracker';
 
 const Drawer = createDrawerNavigator();
 
